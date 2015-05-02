@@ -3,7 +3,7 @@
 
 error_reporting(0);
 
-$html = @mb_convert_encoding($argv[1], 'HTML-ENTITIES', "UTF-8");
+$html = @htmlspecialchars($argv[1], ENT_NOQUOTES | ENT_HTML5);
 
 echo json_encode([
     [
